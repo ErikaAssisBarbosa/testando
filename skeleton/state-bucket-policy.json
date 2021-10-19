@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Principal": { "AWS": "arn:aws:iam::900776855993:user/terraform"},
+      "Resource": "arn:aws:s3:::hello-eks-terraform-state-bucket"
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:PutObject"],
+      "Principal": { "AWS": "arn:aws:iam::900776855993:user/terraform"},
+      "Resource": "arn:aws:s3:::hello-eks-terraform-state-bucket/hello-eks-terraform-state"
+    }
+  ]
+}
